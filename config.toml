@@ -1,0 +1,14 @@
+title = 'Client Service Assignment'
+theme = "bare"
+
+[menu]
+  [[menu.main]]
+    name = "Guess Game"
+    pre = "target"
+    url = "https://vueguessgame.z10.web.core.windows.net/"
+    weight = 1
+  [[menu.main]]
+    name = "Tic Tac Toe"
+    pre = "hash"
+    url = "https://vuetictactoe.z10.web.core.windows.net/"
+    weight = 2

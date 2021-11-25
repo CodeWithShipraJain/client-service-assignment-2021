@@ -1,0 +1,41 @@
+
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  {{ $title := print .Site.Title " | " .Title }}
+  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+  <title>{{ $title }}</title>
+</head>
+<body>
+  <div id="nav-border" class="container">
+    <nav id="nav" class="nav justify-content-center">
+      {{ range .Site.Menus.main }}
+      <a class="nav-link" href="{{ .URL }}">
+        {{ if .Pre }}
+        {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
+        {{ $icon }}
+        {{ end }}
+        {{ $text := print .Name | safeHTML }}
+        {{ $text }}
+      </a>
+      {{ end }}
+    </nav>
+  </div>
+  
+  <div id="content">  
+    <div id="home-jumbotron" class="jumbotron text-center">
+      <h1 class="title">{{ .Site.Title }}</h1>
+    </div>
+  </div>
+  
+  <p class="footer text-center">Copyright (c) {{ now.Format "2006"}} Shipra Jain</p>
+  <script src="/js/feather.min.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
